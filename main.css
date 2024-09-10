@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #cccccc73;
+    font-family: "Roboto", sans-serif;
+}
+
+header {
+    background-color: #396af1;
+}
+
+header .container {
+    color: #ecf0f1;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+}
+
+header h1 {
+    font-style: italic;
+    font-size: 1.75rem;
+}
+
+header nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+header nav li {
+    margin-left: 16px;
+}
+
+header nav li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+section h2 {
+    font-style: italic;
+    margin: 0 0 16px;
+    color: #396af1;
+    position: relative;
+    padding-bottom: 16px;
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #396af1;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.about-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 24px;
+}
+
+.about p {
+    text-align: justify;
+    padding-top: 8px;
+    line-height: 1.6;
+}
+
+button {
+    width: 100%;
+    background-color: #396af1;
+    border-radius: 6px;
+    height: 32px;
+    border: none;
+    font-size: 1rem;
+    color: #fff;
+    cursor: pointer;
+    margin: 0 0 8px;
+}
+
+button:hover {
+    background-color: #7196fa;
+}
+
+.products {
+    margin-top: 32px;
+}
+
+.produtos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2%;
+}
+
+.itens {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Garante que o conteúdo e o botão fiquem distribuídos */
+    height: 100%; /* Faz com que o item ocupe toda a altura disponível */
+}
+
+.itens a {
+    flex-grow: 1; /* Faz com que o conteúdo cresça para preencher o espaço */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Garante que o botão fique alinhado na parte inferior */
+    text-decoration: none; /* Remove o sublinhado */
+}
+
+.itens button {
+    margin-top: 16px; /* Espaçamento entre o conteúdo e o botão */
+    align-self: stretch; /* Faz o botão ocupar a largura total do contêiner */
+}
+
+.itens img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.itens h1 {
+    font-size: 1.25rem;
+    margin: 16px 0 8px;
+}
+
+.itens h3 {
+    margin: 16px 0 16px 0;
+    color: #000;
+}
+
+.itens p {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: #000;
+    margin: 0 0 16px;
+}
+
+@media screen and (max-width: 640px) {
+    .container {
+        max-width: 90%;
+    }
+
+    .produtos {
+        grid-template-columns: 1fr;
+    }
+
+    .about-screen {
+        flex-direction: column;
+    }
+
+    .about-screen img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 16px;
+    }
+
+    button {
+        margin-top: 16px;
+    }
+}
+
+@media screen and (min-width: 641px) and (max-width: 1023px) {
+    .container {
+        max-width: 80%;
+    }
+
+    .produtos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-screen {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .about-screen img {
+        max-width: 50%;
+        margin-right: 16px;
+    }
+
+    .itens a {
+        text-decoration: none; /* Remove o sublinhado dos links */
+    }
+
+    .itens img {
+        width: 98%;
+        height: 60%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .container {
+        max-width: 80%;
+    }
+
+    .about-screen {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .about-screen img {
+        max-width: 40%;
+        margin-right: 16px;
+    }
+
+    .produtos {
+        grid-template-columns: repeat(4, 1fr);
+    }  
+
+    .itens h1 {
+        font-size: 1.5rem;
+    }
+
+    .itens p {
+        font-size: 1rem;
+    }
+}
